@@ -5,29 +5,91 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        h1 {
+            background-color: tomato;
+            border: 2px black solid;
+            color: black;
+        }
+
+        th{
+            color: black;
+        }
+
+        td{
+            color: black;
+        }
+
+        table,th,td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+    </style>
 </head>
 <body>
+    <h1>Vancouver VS Toronto Population Growth</h1>
+
     <table>
         <tr>
-            <td>Year</td>
-            <td>Population</td>
-            <td>+-%</td>
-        </tr>
-        <tr>
-            <td>1891</td>
-            <td>21,886</td>
-            <td>--</td>
-        </tr>
-        <tr>
-            <td>1901</td>
-            <td>42.926</td>
-            <td>+96.1%</td>
-        </tr>
-        <tr>
-            <td>1911</td>
-            <td>164,926</td>
-            <td>+282.1%</td>
+            <td>
+                <h1>Vancouver Population Growth</h1>
+                <table>
+                    <tr>
+                        <th>Year</th>
+                        <th>Population</th>
+                        <th>+-%</th>
+                    </tr>
+                    <tr>
+                        <td>1891</td>
+                        <td>21,886</td>
+                        <td> -- </td>
+                    </tr>
+                    <tr>
+                        <td>1901</td>
+                        <td>42.926</td>
+                        <td>+96.1%</td>
+                    </tr>
+                    <tr>
+                        <td>1911</td>
+                        <td>164,926</td>
+                        <td>+282.1%</td>
+                    </tr>
+                </table>
+                <p>Source: <a href="https://www.wikiwand.com/en/Vancouver">Wikiwand</a></p>
+            </td>
         </tr>
     </table>
+    <table>
+        <tr>
+            <td>
+                <h1>Toronto Population Growth</h1>
+                <table>
+                    <tr>
+                        <th>Year</th>
+                        <th>Population</th>
+                        <th>+-%</th>
+                    </tr>
+                    <tr>
+                        <td>1834</td>
+                        <td>9,252</td>
+                        <td> -- </td>
+                    </tr>
+                    <tr>
+                        <td>1901</td>
+                        <td>238,080</td>
+                        <td>+2473.3%</td>
+                    </tr>
+                    <tr>
+                        <td>1911</td>
+                        <td>381383</td>
+                        <td>+60.2%</td>
+                    </tr>
+                </table>
+                <p>Source: <a href="https://en.wikipedia.org/wiki/Toronto">Wiki</a></p>
+            </td>
+        </tr>
+    </table>
+
+    
 </body>
 </html>
