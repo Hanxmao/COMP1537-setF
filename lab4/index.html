@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>COMP1537 Lab05</title>
+        <style>
+            #lastLink {
+                float: right;
+            }
+
+            nav {
+                background-color: black;
+            }
+            
+            nav a {
+                text-decoration: none;
+                display: inline-block;
+                padding: 10px;
+                color: white;
+                width: 100px;
+                text-align: center;
+            }
+
+            nav a:hover {
+                color: #333;
+                background-color: antiquewhite;
+            }
+
+            .card {
+                background-color: #a2b9bc;
+                margin: 10px;
+                padding: 20px;
+            }
+
+            section {
+                float: left;
+                width: 70%;
+            }
+
+            aside {
+                float: right;
+                width: 30%;
+            }
+
+            footer {
+                clear: both; 
+                /* reset the float */
+            }
+
+            @media screen and (max-width: 400px) {
+                section {
+                    float : none;
+                    width: 100%;
+                }
+            
+                aside {
+                    float: none;
+                    width: 100%;
+                }
+
+                #lastLink {
+                    float: none;
+                }
+
+                nav a {
+                    width: 100%;
+                    text-align: center;
+                }
+            }
+
+        </style>
+    </head>
+    <body>
+        <header>
+            <h1>Header</h1>
+            <p>Should be Responsive</p>
+        </header>
+        <nav>
+            <a href="">Link 1</a>
+            <a href="">Link 2</a>
+            <a href="">Link 3</a>
+            <a href="" id="lastLink">Link 4</a>
+        </nav>
+        <main>
+            <section>
+                <div class="card">
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Assumenda quaerat optio, nostrum repellat consequatur distinctio et vel, reprehenderit molestiae cupiditate nam architecto hic expedita repellendus impedit laboriosam deserunt fuga! Numquam.</p>
+                </div>
+                <div class="card">
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Assumenda quaerat optio, nostrum repellat consequatur distinctio et vel, reprehenderit molestiae cupiditate nam architecto hic expedita repellendus impedit laboriosam deserunt fuga! Numquam.</p>
+            </div>
+            </section>
+            <aside>
+                <div class="card">
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deserunt expedita natus nisi, dolores inventore commodi quibusdam deleniti cumque numquam dolorum itaque placeat? Recusandae sint facilis fuga velit, illo quae tenetur.</p>
+                </div>
+            </aside>
+        </main>
+        <footer><h1>Footer</h1></footer>
+    </body>
+</html>
