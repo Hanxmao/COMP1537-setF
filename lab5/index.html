@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #lastlink {
+            float: right;
+        }
+
+        nav {
+            background-color: black;
+            overflow: hidden;
+        }
+        
+        nav a {
+            float: left;
+            padding: 10px;
+            color: #f2f2f2;
+            text-decoration: none;
+            padding: 14px 16px;
+            text-align: center;
+        }
+
+        h1 {
+            margin: 0px;
+            text-align: center;
+        }
+
+        img {
+            width: 100%;
+        }
+
+        .img-container {
+            width: 30%;
+            float: left;
+            margin-left: 5%;
+        }
+
+        #image-row {
+            width: 95%;
+            margin: auto;
+
+        }
+
+        @media screen and (max-width: 600px) {
+            .img-container{
+                width: 100%;
+                margin : 0;
+            }
+            #image-row{
+                width: 100%;
+            }
+        }
+
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Responsive Web Gallery</h1>
+    </header>
+    <nav>
+        <a href="#">Link1</a>
+        <a href="#">Link2</a>
+        <a href="#">Link3</a>
+        <a id='lastlink' href="#">Link4</a>
+    </nav>
+    <main>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo ea, vel eos, provident eligendi officia, nihil inventore commodi fugit magnam similique? Facere recusandae reiciendis, iusto pariatur quaerat harum accusantium iste.</p>
+
+        <div id="image-row">
+            <div class="img-container" style="margin-left:0">
+                <img src="https://picsum.photos/200/?random=1" alt="">
+            </div>
+            <div class="img-container">
+                <img src="https://picsum.photos/200/?random=2" alt="">
+            </div>
+            <div class="img-container">
+                <img src="https://picsum.photos/200/?random=3" alt="">
+            </div>
+        </div>
+        <div id="image-row">
+            <div class="img-container" style="margin-left:0">
+                <img src="https://picsum.photos/200/?random=1" alt="">
+            </div>
+            <div class="img-container">
+                <img src="https://picsum.photos/200/?random=2" alt="">
+            </div>
+            <div class="img-container">
+                <img src="https://picsum.photos/200/?random=3" alt="">
+            </div>
+        </div>
+        <div id="image-row">
+            <div class="img-container" style="margin-left:0">
+                <img src="https://picsum.photos/200/?random=1" alt="">
+            </div>
+            <div class="img-container">
+                <img src="https://picsum.photos/200/?random=2" alt="">
+            </div>
+            <div class="img-container">
+                <img src="https://picsum.photos/200/?random=3" alt="">
+            </div>
+        </div>
+    </main>
+</body>
+</html>
