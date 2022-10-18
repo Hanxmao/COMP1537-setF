@@ -69,6 +69,14 @@ nav a:hover{
     .img{
         float: none;
         width: 100%;
+        height: auto;
+
+    }
+    .img-row{
+        width: 300px;
+    }
+    .img-container{
+        width: 230px;
     }
     
 }
@@ -77,14 +85,18 @@ nav a:hover{
     .img{
         float:none;
         width: 100%;
+        height: auto;
     }
 
     .img-container{
         float:none;
-        width: 100%;
+        width:300px;
         padding: 0px;
     }
-
+    .img-row{
+        width: 100%;
+        height: auto;
+    }
     #header{
         width: 100%;
     }
