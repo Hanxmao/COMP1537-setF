@@ -1,0 +1,110 @@
+* {
+    font-family: sans-serif;
+}
+
+hr {
+    margin-top: 0px;
+    background-color: lightgray;
+}
+
+
+#logo{
+    float: left;
+}
+
+nav{
+    float: right;
+    padding: 10px;
+}
+
+nav a{
+    box-sizing: content-box;
+    color: gray;
+    text-decoration: none;
+    /* width: 50px; */
+    text-align: center;
+    padding: 0px 10px;
+}
+
+nav a:hover{
+    color: black;
+}
+
+#header{
+    display: inline-block;
+    width: 100%;
+}
+
+#stories{
+    margin-bottom: 0px;
+}
+
+.img-container {
+    width: 48%;
+    float: left;
+    margin: 0px 3px;
+    border: solid 0.5px lightgray;
+}
+
+#image-row {
+    width: 100%;
+    height: auto;
+}
+
+.img{
+    /* width: 200px; */
+    float: left;
+    padding-right: 5px;
+    padding-bottom: 5px;
+}
+
+#footer{
+    margin-top: 10px;
+    text-align: center;
+    margin: auto;
+}
+
+
+@media only screen and (min-width:500px) and (max-width: 850px) {
+    .img{
+        float: none;
+        width: 100%;
+    }
+    
+}
+
+@media screen and (max-width:499px) {
+    .img{
+        float:none;
+        width: 100%;
+    }
+
+    .img-container{
+        float:none;
+        width: 100%;
+        padding: 0px;
+    }
+
+    #header{
+        width: 100%;
+    }
+    nav {
+        float:none;
+    }
+    nav a{
+        display: inline-block;
+        float: none;
+        padding: 10px 0px;
+        width: 100%;
+        text-align: center;
+    }
+
+    nav a:hover{
+        background-color: black;
+        color:white;
+    }
+
+    #logo{
+        display: none;
+    }
+}
