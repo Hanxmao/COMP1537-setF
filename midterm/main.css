@@ -47,8 +47,8 @@ nav a:hover{
 }
 
 #image-row {
-    width: 100%;
     height: auto;
+    margin: auto;
 }
 
 .img{
