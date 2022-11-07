@@ -18,12 +18,12 @@ setup = ()=>{
         $('#result').html(result)
         result_color = 
         `
-        <span style="background-color:tomato">
+        <div style="background-color:tomato">
             ${result}
             <button class='hide_button'> Hide </button>
-        </span>
+        </div>
         `
-        $('#history').append(result_color + '<br>')
+        $('#history').append(result_color)
     })
 
     $('#minus').click(()=>{
@@ -31,12 +31,12 @@ setup = ()=>{
         $('#result').html(result)
         result_color = 
         `
-        <span style="background-color:green">
+        <div style="background-color:green">
             ${result}
             <button class='hide_button'> Hide </button>
-        </span>
+        </div>
         `
-        $('#history').append(result_color + '<br>')
+        $('#history').append(result_color)
     })
 
     $('#times').click(()=>{
@@ -44,12 +44,12 @@ setup = ()=>{
         $('#result').html(result)
         result_color = 
         `
-        <span style="background-color:blue">
+        <div style="background-color:blue">
             ${result}
             <button class='hide_button'> Hide </button>
-        </span>
+        </div>
         `
-        $('#history').append(result_color + '<br>')
+        $('#history').append(result_color)
     })
 
     $('#divide').click(()=>{
@@ -57,12 +57,12 @@ setup = ()=>{
         $('#result').html(result)
         result_color = 
         `
-        <span style="background-color:yellow">
+        <div style="background-color:yellow">
             ${result}
             <button class='hide_button'> Hide </button>
-        </span>
+        </div>
         `
-        $('#history').append(result_color + '<br>')
+        $('#history').append(result_color)
     })
 
     $('body').on('click', '.hide_button', hideBtnHandler)
