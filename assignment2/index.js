@@ -9,7 +9,12 @@ const display = function(){
         type: "GET",
         success: function(data){
 
-           
+            $("#buttonArea").append('<button id="first" value="1">First</button>')
+            for(i = 1; i<= Math.ceil(data.results.length / pageSize); i++){
+                $("#buttonArea").append(`<button id="${i}">${i}</button>`)
+            }
+            $("#buttonArea").append('<button id="last">Last</button>')
+
 
             startIndex = (currentPage - 1) * pageSize
             endIndex = startIndex + pageSize
