@@ -18,32 +18,39 @@
 
         main{
             float: left;
-            width: 30%;
+            width: 50%;
         }
 
         aside {
             float: left;
-            width: 70%;
+            width: 50%;
             padding-left: 10px;
         }
     </style>
 </head>
 <body>
     <main>
-        Select the Page size
-        <label for="pageSize"></label>
-        <select name="pageSize" id="pageSize">
-            <option value="3">3</option>
-            <option value="5">5</option>
-            <option value="10">10</option>
-            <option value="20">20</option>
-        </select>
-
-        <label for="searchTerm"></label>
-        <input type="text" name="searchTerm" id="searchTerm">
-
-        <button id="searchBtn">Search!</button>
+        <div>
+            <span>Page size</span>
+            <label for="pageSize"></label>
+            <select name="pageSize" id="pageSize">
+                <option value="3">3</option>
+                <option value="5">5</option>
+                <option value="10">10</option>
+                <option value="20">20</option>
+            </select>
+        </div>
+        <div>
+            <span>Search TMDB by title</span>
+            <label for="searchTerm"></label>
+            <input type="text" name="searchTerm" id="searchTerm" value="800">
+            <button id="searchBtn">Search!</button>
+        </div>
+        <div id="buttonArea"></div>
         <div id="contentArea"></div>
     </main>
+    <aside>
+
+    </aside>
 </body>
 </html>
