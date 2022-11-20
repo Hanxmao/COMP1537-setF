@@ -29,19 +29,59 @@ const display = function(){
     
 const addButton = function(){
     $('#buttonArea').empty()
-    $("#buttonArea").append('<button  id="first" value="1">First</button>')
-    $("#buttonArea").append('<button  id="prev" >Prev.</button>')
     for(i = 1; i<= Math.ceil(results.length / pageSize); i++){
         $("#buttonArea").append(`<button value="${i}" id="${i}">${i}</button>`)
         $('body').on('click', `#${i}`, function(){
             currentPage = Number($(this).val())
+            $('#prev').show()
+            $('#next').show()
             display()
             console.log(currentPage);   
         })
     }
-    $("#buttonArea").append('<button id="next" >next</button>')
-    $("#buttonArea").append('<button id="last">Last</button>')
+}
 
+setup = function(){
+    $.ajax({
+        url:`https://api.themoviedb.org/3/search/movie?api_key=96871b776d98641185bbfa8afae68416&language=en-US&query=${$('#searchTerm').val()}&page=1&include_adult=false`,
+        type: "GET",
+        success: function(data){
+            results = data.results
+        }
+    })
+    $('#searchBtn').click(()=>{
+        let searchTerm = $('#searchTerm').val()
+        $.ajax({
+            url:`https://api.themoviedb.org/3/search/movie?api_key=96871b776d98641185bbfa8afae68416&language=en-US&query=${searchTerm}&page=1&include_adult=false`,
+            type: "GET",
+            success: function(data){
+                results = data.results
+                addButton()
+            }
+        })
+        
+        $('#first').show()
+        $('#last').show()
+
+        display()
+        $('body').on('click', ".backdropBtn", function(){
+            path = $(this).attr("get_path")
+            console.log(path)
+            $('aside').html(
+                `
+                <img src='https://image.tmdb.org/t/p/w500${path}'>
+                `
+            )
+        })
+    })
+
+    $('select').change(()=>{
+        // console.log( $("select option:selected").val());
+        pageSize = Number($("select option:selected").val())
+        addButton()
+        display()
+        
+    }) 
 
     $("#first").click(()=>{
         currentPage = 1
@@ -67,45 +107,7 @@ const addButton = function(){
         display()
         console.log(currentPage);
     })
-}
 
-setup = function(){
-    $.ajax({
-        url:`https://api.themoviedb.org/3/search/movie?api_key=96871b776d98641185bbfa8afae68416&language=en-US&query=${$('#searchTerm').val()}&page=1&include_adult=false`,
-        type: "GET",
-        success: function(data){
-            results = data.results
-        }
-    })
-    $('#searchBtn').click(()=>{
-        let searchTerm = $('#searchTerm').val()
-        $.ajax({
-            url:`https://api.themoviedb.org/3/search/movie?api_key=96871b776d98641185bbfa8afae68416&language=en-US&query=${searchTerm}&page=1&include_adult=false`,
-            type: "GET",
-            success: function(data){
-                results = data.results
-            }
-        })
-        
-        display()
-        $('body').on('click', ".backdropBtn", function(){
-            path = $(this).attr("get_path")
-            console.log(path)
-            $('aside').html(
-                `
-                <img src='https://image.tmdb.org/t/p/w500${path}'>
-                `
-            )
-        })
-    })
-
-    $('select').change(()=>{
-        // console.log( $("select option:selected").val());
-        pageSize = Number($("select option:selected").val())
-        addButton()
-        display()
-        
-    }) 
 }
 
 
