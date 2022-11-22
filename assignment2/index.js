@@ -11,21 +11,23 @@ const display = function(){
     startIndex = (currentPage - 1) * pageSize
     endIndex = startIndex + pageSize
     for(i = startIndex; i < endIndex; i++ ){
-        $('#contentArea').append(
-            `
-            <div>
-            <p>#${i + 1}</p>
-            <p>Title: ${results[i].title}</p>
-            <p>Description: ${results[i].overview}</p>
-            <img src='https://image.tmdb.org/t/p/w500${results[i].poster_path}'>
-            <button get_path="${results[i].poster_path}" class="backdropBtn">Get Backdrop Image</button>
-            </div>
-            `
-            )
+        if(results[i]){
+            $('#contentArea').append(
+                `
+                <div>
+                <p>#${i + 1}</p>
+                <p>Title: ${results[i].title}</p>
+                <p>Description: ${results[i].overview}</p>
+                <img src='https://image.tmdb.org/t/p/w500${results[i].poster_path}'>
+                <button get_path="${results[i].poster_path}" class="backdropBtn">Get Backdrop Image</button>
+                </div>
+                `
+                )
         }
+    }
 
    
-    }
+}
     
 const addButton = function(){
     $('#buttonArea').empty()
