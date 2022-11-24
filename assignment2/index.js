@@ -1,4 +1,4 @@
-var currentPage = 1
+let currentPage = 1
 let pageSize = 3
 let pageNumber = null
 var results = null
