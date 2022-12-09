@@ -1,28 +1,28 @@
 let receivedArray
 
-
+function hideBtnHandler(){
+    console.log("clicked");
+    console.log(this);
+    if ($(this).next().attr("style") == "display:block"){
+        // $(this).next().attr("style", "display:none")
+    }else{
+        $(this).next().attr("style", "display:block")
+    }
+    
+    if($(this).html() == 'hide details'){
+        $(this).html('show details')
+    }else{
+        $(this).html('hide details')
+    }
+    
+    
+}
 
 function setup() {
 
     $('#gender').change(() => {
         gender = $("#gender option:selected").val()
-        $('body').on('click', '.hide_button', function hideBtnHandler(){
-            console.log("clicked");
-            console.log(this);
-            if ($(this).next().attr("style") == "display:block"){
-                $(this).next().attr("style", "display:none")
-            }else{
-                $(this).next().attr("style", "display:block")
-            }
-            
-            if($(this).html() == 'hide details'){
-                $(this).html('show details')
-            }else{
-                $(this).html('hide details')
-            }
-            
-            
-        })
+
         $.ajax({
             url: 'http://localhost:8000/getUnicornByGenderRoute',
             type: "POST",
@@ -59,9 +59,9 @@ function setup() {
             }
         })
         
+        $('body').on('click', '.hide_button', hideBtnHandler)
     })
 }
-
 
 
 $(document).ready(setup)
