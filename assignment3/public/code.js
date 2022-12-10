@@ -3,7 +3,11 @@ let receivedArray
 function setup() {
     $('#nameBtn').click(function () {
         $("#result").html('')
-        $("#table").html('')
+        $("#table").html(`
+        <tr>
+            <th>ID</th><th>Name</th><th>Date of birth</th><th>Loves</th><th>Weight</th><th>Gender</th><th>Vampires</th><th>Vaccines</th>
+        </tr>
+        `)
         $.ajax({
             url: 'http://localhost:8080/getUnicornByNameRoute',
             type: "POST",
@@ -19,14 +23,17 @@ function setup() {
                     </tr>
                     `)
                 })
-                $("#result").html(`${JSON.stringify(receivedArray)}`)
             }
         })
     })
 
     $('#weightBtn').click(function () {
         $("#result").html('')
-        $("#table").html('')
+        $("#table").html(`
+        <tr>
+            <th>ID</th><th>Name</th><th>Date of birth</th><th>Loves</th><th>Weight</th><th>Gender</th><th>Vampires</th><th>Vaccines</th>
+        </tr>
+        `)
         $.ajax({
             url: 'http://localhost:8080/getUnicornByWeightRoute',
             type: "POST",
@@ -42,14 +49,17 @@ function setup() {
                     </tr>
                     `)
                 })
-                $("#result").html(`${JSON.stringify(receivedArray)}`)
             }
         })
     })
 
     $('#foodBtn').click(function () {
         $("#result").html('')
-        $("#table").html('')
+        $("#table").html(`
+        <tr>
+            <th>ID</th><th>Name</th><th>Date of birth</th><th>Loves</th><th>Weight</th><th>Gender</th><th>Vampires</th><th>Vaccines</th>
+        </tr>
+        `)
         let foodCheck = []
         foodCheck.push($('#apple').is(':checked') ? "apple" : "none")
         foodCheck.push($('#carrot').is(':checked') ? "carrot" : "none")
@@ -69,7 +79,6 @@ function setup() {
                     </tr>
                     `)
                 })
-                $("#result").html(`${JSON.stringify(receivedArray)}`)
             }
         })
     })
@@ -79,24 +88,31 @@ function setup() {
         $("#table").html('')
         if ($('#nameFilter').is(':checked') && $('#weightFilter').is(':checked')) {
             $("#table").html(`<tr><th>Name</th><th>Weight</th></tr>`)
+            $("#table").html(`        
+            <tr>
+                <th>Name</th><th>Weight</th>
+            </tr>`)
             receivedArray.forEach(unicorn => {
                 $("#table").append(`
                     <tr>
                         <td>${unicorn.name}</td><td>${unicorn.weight}</td>
                     </tr>
                     `)
-                $("#result").append(`<div>Name: ${JSON.stringify(unicorn["name"])} Weight: ${JSON.stringify(unicorn["weight"])}</div>`)
+
             });
         }
         else if ($('#nameFilter').is(':checked')) {
             $("#table").html(`<tr><th>Name</th></tr>`)
+            $("#table").html(`        
+            <tr>
+                <th>Name</th>
+            </tr>`)
             receivedArray.forEach(unicorn => {
                 $("#table").append(`
                 <tr>
                     <td>${unicorn.name}</td>
                 </tr>
                 `)
-                $("#result").append(`<div>Name: ${JSON.stringify(unicorn["name"])}</div>`)
             });
         }
         else if ($('#weightFilter').is(':checked')) {
@@ -107,11 +123,22 @@ function setup() {
                     <td>${unicorn.weight}</td>
                 </tr>
                 `)
-                $("#result").append(`<div>Weight: ${JSON.stringify(unicorn["weight"])}</div>`)
             });
         }
         else {
-            $("#result").html(JSON.stringify(receivedArray))
+            $("#table").html(`
+            <tr>
+                <th>ID</th><th>Name</th><th>Date of birth</th><th>Loves</th><th>Weight</th><th>Gender</th><th>Vampires</th><th>Vaccines</th>
+            </tr>
+            `)
+            receivedArray.forEach(function (item) {
+                console.log(item);
+                $("#table").append(`
+                <tr>
+                    <td>${item._id}</td><td>${item.name}</td><td>${(item.dob).slice(0, 10)}</td><td>${item.loves}</td><td>${item.weight}</td><td>${item.gender}</td><td>${item.vampires}</td><td>${item.vaccines}</td>
+                </tr>
+                `)
+            })
         }
     })
 
