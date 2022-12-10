@@ -7,16 +7,48 @@
     <title>Document</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <script src="./code.js"></script>
+    <style>
+        table, th, td {
+            border:1px solid black;
+        }
+    </style>
 </head>
 <body>
-    <input type="text" id="unicornNameInHTML">
-    <label for="unicornNameInHTML">Please Enter a Name</label>
+    <h2>Search/Selection</h2>
 
+    <h3>Search unicorns by Name</h3>
+    <label for="unicornName">Please Enter a Name</label>
+    <input type="text" id="unicornName">
     <button id="nameBtn">Submit</button>
 
-    <input type="checkbox" id="nameFilter">
-    <label for="nameFilter">Show Name</label>
+    <h3>Or Search unicorns by Weight</h3>
+    <label for="unicornLowerWeight">Unicorn weight from </label>
+    <input type="text" id="unicornLowerWeight">
+    <label for="unicornHigherWeight">to </label>
+    <input type="text" id="unicornHigherWeight">
+    <button id="weightBtn">Submit</button>
 
+    <h3>Search unicorns by Fav.food</h3>
+    <label for="apple">Apple</label>
+    <input type="checkbox" name="food" id="apple" value="apple">
+    <label for="carrot">Carrot</label>
+    <input type="checkbox" name="food" id="carrot" value="carrot">
+    <button id="foodBtn">Submit</button>
+    <hr>
+    <h3>Filters/Projection</h3>
+    <label for="nameFilter">Show Name only</label>
+    <input type="checkbox" id="nameFilter">
+    <label for="weightFilter">Show Weight only</label>
+    <input type="checkbox" id="weightFilter">
+    <button id="filterBtn">Submit</button>
+    <hr>
+    <h2>Result:</h2>
+    <table id="table">
+        <tr>
+            <th>ID</th><th>Name</th><th>Date of birth</th><th>Loves</th><th>Weight</th><th>Gender</th><th>Vampires</th><th>Vaccines</th>
+        </tr>
+    </table>
     <p id="result"></p>
+
 </body>
 </html>

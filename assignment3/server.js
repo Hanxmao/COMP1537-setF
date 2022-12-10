@@ -1,9 +1,9 @@
 const express = require('express');
 const app = express();
 
-app.listen(8000, (err) => {
+app.listen(8080, (err) => {
   if (err) console.log(err);
-  console.log('Server is running on port 8000');
+  console.log('Server is running on port 8080');
 });
 
 app.get('/', (req, res) => {
@@ -38,8 +38,9 @@ const unicornModel = mongoose.model('unicorns', unicornsSchema);
 //     if(err) console.log(err);
 // })
 
+
 app.get('/unicorns', (req, res) => {
-    unicornModel.find({}, (err, data) => {
+    unicornModel.find({"gender": "f"}, (err, data) => {
         if (err) console.log(err);
         res.send(data);
     });
@@ -53,6 +54,32 @@ app.post('/getUnicornByNameRoute', (req, res)=>{
     if(err) console.log(err);
     res.send(data)
   })
+})
+
+app.post('/getUnicornByWeightRoute', (req, res)=>{
+  let lowerWeight = Number(req.body.lowerWeight)
+  let higherWeight = Number(req.body.higherWeight)
+  unicornModel.find({weight: {$gte: lowerWeight, $lte: higherWeight}}, (err, data)=>{
+    if(err) console.log(err);
+    res.send(data)
+  })
+})
+
+app.post('/getUnicornByFoodRoute', (req, res)=>{
+  let foods = req.body.foodCheck.filter(x => x != "none")
+  if (foods.length == 1){
+    unicornModel.find({loves: foods[0]}, (err, data)=>{
+      if(err) console.log(err);
+      res.send(data)
+      
+    })
+  }
+  else if(foods.length == 2){
+    unicornModel.find({$and: [{loves: foods[0]}, {loves: foods[1]}]}, (err, data)=>{
+      if(err) console.log(err);
+      res.send(data)
+    })
+  }
 })
 
 
